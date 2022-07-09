@@ -1,0 +1,201 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+/* Resets */
+
+
+/* Root Colors */
+:root{
+    --bg-color: linear-gradient(0deg,hsl(240, 73%, 65%), hsl(273, 75%, 66%));
+    --arrow-color: hsl(14, 88%, 65%);
+    --text-color: hsl(238, 29%, 16%);
+    --divder-color: hsl(240, 5%, 91%);
+}
+
+/* Base Style Components */
+body{
+    background: var(--bg-color);
+    font-family: 'Kumbh Sans', sans-serif;
+    color: var(--text-color);
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100vw;
+    height: 100vh;
+}
+
+button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button span{
+    display: block;
+}
+
+
+button:hover{
+    color: var(--arrow-color);
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.faq{
+    background-color: #fff;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: flex-start; 
+}
+
+.info-head{
+    border-bottom: 1px solid var(--divder-color);
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    margin-bottom: 35px;
+    align-content: flex-start;
+    cursor: pointer;
+}
+
+.info-body{
+    text-align: left;
+    display: none;
+    padding: 2px;
+    font-size: 1.2em;
+    transition: display 0.3s ease;
+}
+
+.info-head.active > .info-body{
+    display: block;
+    
+}
+
+.info-head.active > button span.info{
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.info-head.active > button span.chevy{
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+
+/* Mobile Styles */
+@media screen and (max-width: 500px){
+
+    .faq-img{
+      width: 80%;
+      margin-bottom: 10px;
+    }
+
+    .card-thumbnail > img{
+        position: relative;
+        margin-top: -53%;
+        right: -10%;
+    }
+
+    .faq-img > img{
+        display: none;
+    }
+
+    h1{
+        width: 100%;
+        font-size: 3em;
+        text-align: center;
+    }
+
+    button{
+        font-size: 1.2em;
+    }
+
+    h2 span.info{
+        font-weight: 400;
+        font-size: 1em;
+    }
+
+    .faq-body{
+        width: 100%;
+        padding: 20px 0px;
+    }
+    
+    .faq{
+        border-radius: 20px;
+        width: 86%;
+        padding: 20px;
+        background-image: url('./images/bg-pattern-mobile.svg');
+        background-size: 72%;
+        width: 90%;
+        background-repeat: no-repeat;
+        background-position: center top;
+    }
+
+}
+
+@media screen and (min-width: 920px){
+    .faq-img{
+        height: 100%;
+    }
+
+    .card-thumbnail > img{
+        position: relative;
+        margin-left: -90px;
+        top: 55px;
+        width: 100%;
+    }
+
+    .faq-img > img {
+        position: absolute;
+        margin-left: -472px;
+        margin-top: 180px;
+    }
+
+    h1{
+        font-size: 3em;
+        font-weight: 700;
+    }
+
+    button span.info{
+        font-weight: 400;
+        font-size: 1em;
+        padding-right: 10px;
+    }
+
+    .faq{
+        width: 900px;
+        border-radius: 30px;
+        background-image: url('./images/bg-pattern-desktop.svg');
+        background-position: -444px -226px;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        display: grid;
+        overflow: hidden;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px;
+    }
+
+    .faq-body{
+        position: relative;
+        padding: 10px;
+        margin-left: -10px;
+        margin-bottom: 20px;
+        width: 350px;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+}
